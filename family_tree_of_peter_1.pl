@@ -9,6 +9,10 @@ child(X, Y) :- mama(Y, X).
 sib(X, Y) :- mama(X, Z), mama(Y, Z), dad(X, D), dad(Y, D), not(X = Y).
 dad(X, Y) :- mama(X, Z), hasband(Z, Y).
 wife(X, Y):- hasband(Y, X).
+great_grandma(X, Y) :- grandma(X, Z), mama(Z, Y).
+great_grandma(X, Y) :- granddad(X, Z), mama(Z, Y).
+great_granddad(X, Y) :- grandma(X, Z), dad(Z, Y).
+great_granddad(X, Y) :- granddad(X, Z), dad(Z, Y).
 % facts
 % родители Алексея Михаиловича
 hasband("Евдокия Лукьянова", "Михаил Федорович").
