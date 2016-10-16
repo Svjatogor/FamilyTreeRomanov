@@ -13,6 +13,9 @@ great_grandma(X, Y) :- grandma(X, Z), mama(Z, Y).
 great_grandma(X, Y) :- granddad(X, Z), mama(Z, Y).
 great_granddad(X, Y) :- grandma(X, Z), dad(Z, Y).
 great_granddad(X, Y) :- granddad(X, Z), dad(Z, Y).
+grandchild(X, Y) :- child(X, Z), child(Z, Y).
+aunt_or_uncle(X, Y) :- dad(X, Z), sib(Z, Y).
+aunt_or_uncle(X, Y) :- mama(X, Z), sib(Z, Y).
 % facts
 % родители Алексея Михаиловича
 hasband("Евдокия Лукьянова", "Михаил Федорович").
